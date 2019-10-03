@@ -1,5 +1,5 @@
-$main-color:pink;
-
-body {
-  background-color: $main-color
-}
+@import "partials/variables";
+@import "partials/typography";
+@import "partials/header";
+@import "partials/sidebar";
+@import "partials/mainContent";

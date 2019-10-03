@@ -1,0 +1,123 @@
+header.main-header {
+  background-color: $headerBackground;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0.1rem 0rem 0.1rem 2rem;
+  h1 {
+    img {
+      color: $textWhite;
+    }
+  }
+
+  nav {
+    &.app-menu {
+      width: 40%;
+      vertical-align: middle;
+      ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.5rem;
+        li {
+          color: $textWhite;
+          text-transform: uppercase;
+          font-size: 0.95rem;
+          font-weight: 530;
+          font-family: "Rockwell,AdobeInvisFont,MyriadPro-Regular";
+          &.menu-active {
+            color: $headerActiveColor;
+          }
+        }
+      }
+    }
+    &.app-navbar {
+      width: 45%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      div.search-box {
+        position: relative;
+        width: 55%;
+        input {
+          border: none;
+          outline: none;
+          border-radius: 1.5rem;
+          font-size: 0.8rem;
+          font-style: italic;
+          margin-left: 1rem;
+          font-family: "Roboto-LightItalic,AdobeInvisFont,MyriadPro-Regular";
+          height: 60%;
+          position: relative;
+          display: inline-block;
+          width: 100%;
+        }
+
+        button.submit-search {
+          position: absolute;
+          right: -5%;
+          top: 10%;
+          font-size: 0.95rem;
+          color: $headerBackground;
+          border: none;
+          background: transparent;
+        }
+      }
+      ul {
+        width: 45%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around;
+        li {
+          border-right: 1px solid $textWhite;
+          span {
+            font-size: 0.8rem;
+          }
+          &:first-child {
+            flex: 2 1 60%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            align-items: flex-end;
+            align-content: flex-end;
+            span {
+              display: inline-block;
+              &.user-icon {
+                background: $textWhite;
+                color: $headerBackground;
+                border-radius: 50%;
+                // padding: 0.2rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                text-align: center;
+                vertical-align: center;
+              }
+            }
+          }
+          &:nth-child(2),
+          &:nth-child(3) {
+            flex: 1 1 20%;
+            text-align: center;
+            font-size: 0.8rem;
+          }
+          &:last-child {
+            border-right: none;
+            select {
+              border: none;
+              background: transparent;
+              color: $languageActive;
+              font-family: "SourceCodeRoman-Medium,AdobeInvisFont,MyriadPro-Regular";
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              text-indent: 1px;
+              text-overflow: "";
+            }
+          }
+        }
+      }
+    }
+  }
+}

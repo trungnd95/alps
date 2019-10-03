@@ -40,7 +40,7 @@ const styles = {
   // remember above we used an object for each loader instead of just a string?
   // We don't just pass an array of loaders, we run them through the extract plugin so they can be outputted to their own .css file
   use: ExtractTextPlugin.extract([
-    "css-loader?sourceMap",
+    "css-loader?url=false",
     postcss,
     "sass-loader?sourceMap"
   ])
@@ -80,11 +80,11 @@ const config = {
   plugins: [
     // here is where we tell it to output our css to a separate file
     new ExtractTextPlugin("style.bundle.css")
-  ], 
+  ],
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
-        cache: true, 
+        cache: true,
         sourceMap: true
       })
     ]

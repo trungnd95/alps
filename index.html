@@ -42,15 +42,23 @@
 
         <!-- App navbar  -->
         <nav class="app-navbar">
-          <input
-            type="text"
-            class="form-control seach-box"
-            placeholder="Search Files and Folderes"
-          />
+          <div class="search-box">
+            <input
+              type="text"
+              class="form-control seach-box"
+              placeholder="Search Files and Folders"
+            />
+            <button class="submit-search">
+              <i class="fas fa-search submit-search-icon"></i>
+            </button>
+          </div>
+
           <ul class="users-nav">
             <li class="user-nav-item">
               <span class="welcome-title">Welcome Chi</span>
-              <i class="fas fa-user" aria-hidden="true"></i>
+              <span class="user-icon">
+                <i class="fas fa-user" aria-hidden="true"></i>
+              </span>
               <i class="fas fa-caret-down" aria-hidden="true"></i>
             </li>
 
@@ -59,10 +67,10 @@
             </li>
 
             <li class="user-nav-item">
-              <ul class="languages">
-                <li class="jp">JP</li>
-                <li class="en">EN</li>
-              </ul>
+              <select class="languages" name="" id="">
+                <option>JP</option>
+                <option>EN</option>
+              </select>
             </li>
           </ul>
         </nav>
@@ -74,50 +82,49 @@
       <main class="app-content-wrapper">
         <div class="container">
           <div class="row">
-            <aside class="left-sidebar col-md-1">
-              <h4>
-                <i class="fas fa-home"></i>
-                Alps
-              </h4>
-              <ul class="list-folders">
-                <li class="folder">
-                  <i class="fas fa-folder folder-icon" aria-hidden="true"></i>
-                  <span class="folder-name">2019-09-04</span>
-                </li>
-                <li class="folder">
-                  <i class="fas fa-folder folder-icon" aria-hidden="true"></i>
-                  <span class="folder-name">2019-05-12</span>
-                </li>
-                <li class="folder">
-                  <i class="fas fa-folder folder-icon" aria-hidden="true"></i>
-                  <span class="folder-name">2019-05-11</span>
-                </li>
-                <li class="folder">
-                  <i class="fas fa-folder folder-icon" aria-hidden="true"></i>
-                  <span class="folder-name">2019-05-10</span>
-                </li>
-                <li class="folder">
-                  <i class="fas fa-folder folder-icon" aria-hidden="true"></i>
-                  <span class="folder-name">2019-05-09</span>
-                </li>
-              </ul>
+            <!-- Left sidebar -->
+            <aside class="left-sidebar col-md-2">
+              <div class="sidebar-head">
+                <h4>
+                  <i class="fas fa-home"></i>
+                  <p class="d-inline-block">Alps</p>
+                </h4>
+                <ul class="list-folders">
+                  <li class="folder folder-active">2019-09-04</li>
+                  <li class="folder">2019-05-12</li>
+                  <li class="folder">2019-05-11</li>
+                  <li class="folder">2019-05-10</li>
+                  <li class="folder">2019-05-09</li>
+                </ul>
+              </div>
+              <div class="sidebar-bottom">
+                <p>Powered by</p>
+                <img
+                  src="assets/images/brand.png"
+                  class="img-fluid img-responsive"
+                  alt="Cinamon Logo"
+                />
+              </div>
             </aside>
-            <div class="col-md-10 col-md-offset-1">
+            <!-- End of left sidebar -->
+
+            <!-- Main content -->
+            <div class="main-content col-md-10">
               <section class="upload-zone">
-                <div class="upload-icon">
-                  <img
-                    src="assets/images/upload-icon.png"
-                    class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
-                    alt=""
-                  />
+                <div class="upload-icon"></div>
+                <div class="upload-title">
+                  <h2>Upload images</h2>
+                  <p class="text-muted">
+                    drag and drop images that you want to extract
+                  </p>
                 </div>
               </section>
 
               <section class="app-content-breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item">Data Management</li>
-                  <li class="breadcrumb-item">2019-09-04</li>
-                </ol>
+                <ul class="">
+                  <li class="custom-breadcrumb-item">Data Management</li>
+                  <li class="custom-breadcrumb-item">2019-09-04</li>
+                </ul>
               </section>
 
               <section class="table-infos">
@@ -127,32 +134,115 @@
                   <div class="page-items-number">
                     <p class="">
                       <span class="">View file/page</span>
+                      <select class="custom-select custom-select-lg">
+                        <option selected>50</option>
+                        <option value="1">30</option>
+                        <option value="2">10</option>
+                      </select>
+                    </p>
+                  </div>
+                  <div class="pagination">
+                    <i class="fas fa-caret-left" aria-hidden="true"></i>
+                    <p class="d-inline-block">10</p>
+                    <i class="fas fa-caret-right" aria-hidden="true"></i>
+                    <p class="d-inline-block">
+                      of <span class="number-pages">14</span>
                     </p>
                   </div>
                 </section>
                 <table class="table table-striped table-responsive">
                   <thead>
                     <tr>
-                      <th></th>
-                      <th></th>
-                      <th></th>
+                      <th><i class="far fa-square"></i></th>
+                      <th>
+                        No <i class="fas fa-angle-up" aria-hidden="true"></i>
+                      </th>
+                      <th>
+                        Name <i class="fas fa-angle-up" aria-hidden="true"></i>
+                      </th>
+                      <th>
+                        Created
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                      </th>
+                      <th>
+                        By user
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                      </th>
+                      <th>Size</th>
+                      <th>Status</th>
+                      <th>OCR result</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td scope="row"></td>
+                      <td scope="row">
+                        <i class="far fa-square"></i>
+                      </td>
+                      <td>1</td>
+                      <td>Image_0041.jpg</td>
+                      <td>Aug 17,2019</td>
+                      <td>User A</td>
+                      <td>193.6Kb</td>
+                      <td>Process</td>
                       <td></td>
                       <td></td>
                     </tr>
                     <tr>
-                      <td scope="row"></td>
+                      <td scope="row">
+                        <i class="far fa-square"></i>
+                      </td>
+                      <td>1</td>
+                      <td>Image_0041.jpg</td>
+                      <td>Aug 17,2019</td>
+                      <td>User A</td>
+                      <td>193.6Kb</td>
+                      <td><i class="fas fa-check text-success"></i></td>
+                      <td><i class="fas fa-file-excel text-success"></i></td>
+                      <td>
+                        <i class="fas fa-file-download text-success"></i
+                        ><i class="fas fa-share-square"></i>
+                        <i class="fas fa-trash-alt text-danger"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td scope="row">
+                        <i class="far fa-square"></i>
+                      </td>
+                      <td>1</td>
+                      <td>Image_0041.jpg</td>
+                      <td>Aug 17,2019</td>
+                      <td>User A</td>
+                      <td>193.6Kb</td>
+                      <td class="text-danger">Wait</td>
                       <td></td>
                       <td></td>
                     </tr>
                   </tbody>
                 </table>
+                <section class="table-paginations">
+                  <div class="page-items-number">
+                    <p class="">
+                      <span class="">View file/page</span>
+                      <select class="custom-select custom-select-lg">
+                        <option selected>50</option>
+                        <option value="1">30</option>
+                        <option value="2">10</option>
+                      </select>
+                    </p>
+                  </div>
+                  <div class="pagination">
+                    <i class="fas fa-caret-left" aria-hidden="true"></i>
+                    <p class="d-inline-block">10</p>
+                    <i class="fas fa-caret-right" aria-hidden="true"></i>
+                    <p class="d-inline-block">
+                      of <span class="number-pages">14</span>
+                    </p>
+                  </div>
+                </section>
               </section>
             </div>
+            <!-- End of main content -->
           </div>
         </div>
       </main>

@@ -1,0 +1,66 @@
+div.main-content {
+  padding: 1rem;
+  section.upload-zone {
+    width: 50%;
+    border: 2px dashed $dashed;
+    padding: 0.6rem 2rem;
+    margin: 1.5rem auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    div.upload-icon {
+      width: 4.5rem;
+      height: 4.5rem;
+      background-image: url("../../assets/images/upload-icon.png");
+      background-color: $headerBackground;
+      background-repeat: no-repeat;
+      // background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+    div.upload-title {
+      margin-left: 0.6rem;
+      margin-top: 1.5rem;
+      h2 {
+        letter-spacing: -1px;
+        color: $contentTitleColor;
+        font-weight: 100;
+        text-transform: uppercase;
+        font-family: "Rockwell,AdobeInvisFont,MyriadPro-Regular";
+        margin-bottom: 0;
+        line-height: 1.3rem;
+      }
+    }
+  }
+
+  section.app-content-breadcrumb {
+    ul {
+      background: transparent;
+      padding-left: 0;
+      li {
+        color: $normalTextColor;
+        display: inline-block;
+
+        &::before {
+          font-family: "Font Awesome 5 Free";
+          content: "\f054";
+          font-size: 0.8rem;
+          font-weight: 600;
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+        }
+        &:first-child::before {
+          content: "";
+          margin: 0;
+          display: table;
+        }
+        &:last-child {
+          font-weight: 900;
+          color: $black;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

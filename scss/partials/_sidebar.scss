@@ -1,0 +1,41 @@
+aside {
+  background-color: $sidebarBackgroundColor;
+  padding: 1.2rem;
+  padding-left: 1.5rem !important;
+  color: $iconDefault;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  div.sidebar-head {
+    margin: 0;
+    h4 {
+      font-size: 1rem;
+      height: 1.3rem;
+    }
+    ul {
+      margin-top: 1rem;
+      li {
+        color: $iconDefault;
+        font-size: 0.86rem;
+        &::before {
+          content: "\f07b";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          font-size: 0.86rem;
+          margin-right: 0.5rem;
+        }
+        &.folder-active::before {
+          content: "\f07c";
+        }
+      }
+    }
+  }
+
+  div.sidebar-bottom {
+    text-align: center;
+    p {
+      margin-bottom: 0;
+      font-size: 0.7rem;
+    }
+  }
+}
