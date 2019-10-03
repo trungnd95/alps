@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../assets/fonts/AvenirLTStd-Light.woff') format('woff');
+}
+
 * {
   margin: 0 auto;
   box-sizing: border-box !important;
@@ -10,7 +17,7 @@ html {
 body {
   font-size: 1rem;
   background-color: $appBackgroundColor;
-  font-family: "Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif";
+  font-family: "Avenir";
 }
 
 h1,
@@ -42,4 +49,28 @@ li {
 
 .container {
   max-width: 100% !important;
+}
+
+.text-success {
+  color: $success !important;
+}
+
+.text-danger {
+  color: $danger !important;
+}
+
+.text-normal {
+  color: #505050 !important;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.visible {
+  display: flex !important;
 }

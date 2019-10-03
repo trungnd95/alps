@@ -1,5 +1,6 @@
 div.main-content {
   padding: 1rem;
+
   section.upload-zone {
     width: 50%;
     border: 2px dashed $dashed;
@@ -9,6 +10,7 @@ div.main-content {
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
+
     div.upload-icon {
       width: 4.5rem;
       height: 4.5rem;
@@ -19,15 +21,16 @@ div.main-content {
       background-position: center;
       border-radius: 50%;
     }
+
     div.upload-title {
       margin-left: 0.6rem;
       margin-top: 1.5rem;
+
       h2 {
         letter-spacing: -1px;
         color: $contentTitleColor;
         font-weight: 100;
         text-transform: uppercase;
-        font-family: "Rockwell,AdobeInvisFont,MyriadPro-Regular";
         margin-bottom: 0;
         line-height: 1.3rem;
       }
@@ -38,6 +41,7 @@ div.main-content {
     ul {
       background: transparent;
       padding-left: 0;
+
       li {
         color: $normalTextColor;
         display: inline-block;
@@ -50,16 +54,189 @@ div.main-content {
           margin-left: 0.5rem;
           margin-right: 0.5rem;
         }
+
         &:first-child::before {
           content: "";
           margin: 0;
           display: table;
         }
+
         &:last-child {
           font-weight: 900;
           color: $black;
           opacity: 0.8;
+          font-size: 0.9rem;
         }
+      }
+    }
+  }
+
+  section.table-infos {
+    width: 100%;
+
+    section.filter-properties,
+    section.table-paginations {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      align-items: center;
+      align-content: center;
+      width: 60%;
+      float: right;
+      margin-top: -1rem;
+
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      p.deleted {
+        text-decoration: underline;
+        color: #FF5542;
+        font-weight: 600;
+      }
+
+      p.download-file {
+        background: #B4B4B4;
+        border: none;
+        border-radius: 1rem;
+        line-height: 1rem;
+        padding: 0.3rem 0.8rem;
+        color: $textWhite;
+        font-weight: 550;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        font-family: "Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif";
+        // letter-spacing: -1px;
+        height: max-content;
+        vertical-align: middle;
+        margin-bottom: 0;
+      }
+
+      div.page-items-number {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+
+        span {
+          font-size: 0.8rem;
+          font-weight: 100;
+          color: $normalTextColor;
+          margin-right: 0.5rem;
+        }
+
+        select.select-number-items-per-page {
+          font-size: 0.8rem;
+          border-radius: 5px;
+          padding: 2px 4px;
+          color: $iconDefault;
+        }
+      }
+
+      div.pagination {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        flex-basis: 20%;
+        align-items: center;
+        align-content: center;
+        color: $iconDefault;
+
+        svg.small {
+          font-size: 0.7rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+          margin-bottom: 0;
+
+          &.current-page {
+            border: 1px solid #959595;
+            padding: 0 0.6rem;
+            border-radius: 5px;
+            line-height: 1.3rem;
+          }
+        }
+      }
+    }
+
+    table {
+      width: 100%;
+      display: table;
+
+      thead {
+        font-size: 0.9rem;
+        color: $contentTitleColor;
+
+        th {
+          text-align: center;
+          letter-spacing: -0.5px;
+
+          &:first-child {
+            color: $normalTextColor;
+          }
+        }
+      }
+
+      tbody {
+        font-size: 0.8rem;
+
+        td {
+          text-align: center;
+          border-bottom: 1px solid $border;
+
+          &:first-child {
+            color: $normalTextColor;
+          }
+
+          &:last-child {
+            svg {
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    section.table-paginations {
+      width: 30%;
+      margin-top: 0.5rem;
+
+      div.pagination {
+        flex-basis: 40%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  section.upload-zone {
+    div.upload-icon {
+      width: 5rem !important;
+      height: 4rem !important;
+      background-size: 60%, 60%;
+      border-radius: 50%;
+    }
+
+    div.upload-title {
+      margin-left: 0.6rem;
+      margin-top: 1.5rem;
+
+      h2 {
+        letter-spacing: -1px;
+        color: $contentTitleColor;
+        font-weight: 100;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        line-height: 1.3rem;
+        font-size: 1.5rem;
       }
     }
   }

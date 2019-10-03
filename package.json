@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "assets": "webpack -w --display-max-modules 0",
-    "dev": "concurrently \"npm run assets\" \"live-server\""
+    "dev": "concurrently \"npm run assets\" \"live-server\"",
+    "start": "live-server . --port 8080"
   },
   "keywords": [],
   "author": "",

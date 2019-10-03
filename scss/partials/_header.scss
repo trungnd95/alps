@@ -4,6 +4,12 @@ header.main-header {
   flex-flow: row nowrap;
   justify-content: space-between;
   padding: 0.1rem 0rem 0.1rem 2rem;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
+  // z-index: 10;
+
   h1 {
     img {
       color: $textWhite;
@@ -14,33 +20,40 @@ header.main-header {
     &.app-menu {
       width: 40%;
       vertical-align: middle;
+
       ul {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
-        margin-top: 1.5rem;
+        margin-top: 1.3rem;
+
         li {
           color: $textWhite;
           text-transform: uppercase;
           font-size: 0.95rem;
-          font-weight: 530;
-          font-family: "Rockwell,AdobeInvisFont,MyriadPro-Regular";
+          font-weight: 545;
+          font-family: "Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif";
+
           &.menu-active {
             color: $headerActiveColor;
           }
         }
       }
     }
+
     &.app-navbar {
       width: 45%;
       display: flex;
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: center;
+      transition: all 1s ease-in-out;
+
       div.search-box {
         position: relative;
         width: 55%;
+
         input {
           border: none;
           outline: none;
@@ -48,7 +61,6 @@ header.main-header {
           font-size: 0.8rem;
           font-style: italic;
           margin-left: 1rem;
-          font-family: "Roboto-LightItalic,AdobeInvisFont,MyriadPro-Regular";
           height: 60%;
           position: relative;
           display: inline-block;
@@ -65,17 +77,21 @@ header.main-header {
           background: transparent;
         }
       }
+
       ul {
         width: 45%;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: space-around;
+
         li {
           border-right: 1px solid $textWhite;
+
           span {
             font-size: 0.8rem;
           }
+
           &:first-child {
             flex: 2 1 60%;
             display: flex;
@@ -83,8 +99,10 @@ header.main-header {
             justify-content: space-around;
             align-items: flex-end;
             align-content: flex-end;
+
             span {
               display: inline-block;
+
               &.user-icon {
                 background: $textWhite;
                 color: $headerBackground;
@@ -97,19 +115,21 @@ header.main-header {
               }
             }
           }
+
           &:nth-child(2),
           &:nth-child(3) {
             flex: 1 1 20%;
             text-align: center;
             font-size: 0.8rem;
           }
+
           &:last-child {
             border-right: none;
+
             select {
               border: none;
               background: transparent;
               color: $languageActive;
-              font-family: "SourceCodeRoman-Medium,AdobeInvisFont,MyriadPro-Regular";
               -webkit-appearance: none;
               -moz-appearance: none;
               text-indent: 1px;
@@ -117,6 +137,75 @@ header.main-header {
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1125px) and (min-width: 1030px) {
+  header {
+    nav.app-menu {
+      ul {
+        li {
+          font-size: 0.85rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1030px) and (min-width: 992px) {
+  header {
+    nav.app-menu {
+      ul {
+        li {
+          font-size: 0.8rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  header.main-header {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+
+    nav {
+      &.app-menu {
+        width: 90%;
+        padding-left: 0;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+
+        ul {
+          padding-left: 0;
+
+          li {
+            font-size: 0.85rem;
+
+            &:first-child {
+              display: none;
+            }
+
+            &:last-child {
+              margin-right: 0;
+
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      &.app-navbar {
+        width: 70%;
+        margin: 1rem auto;
+        display: none;
+        align-self: flex-start
       }
     }
   }
