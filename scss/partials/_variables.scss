@@ -13,3 +13,8 @@ $black: #000000;
 $success: #007B00;
 $danger: #FF0000;
 $border: #b4b4b4;
+
+@mixin hovered() {
+  opacity: 0.6;
+  cursor: pointer;
+}

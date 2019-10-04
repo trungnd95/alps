@@ -38,6 +38,10 @@ header.main-header {
           &.menu-active {
             color: $headerActiveColor;
           }
+
+          &:hover {
+            @include hovered()
+          }
         }
       }
     }
@@ -69,8 +73,8 @@ header.main-header {
 
         button.submit-search {
           position: absolute;
-          right: -5%;
-          top: 10%;
+          right: -3%;
+          top: 13%;
           font-size: 0.95rem;
           color: $headerBackground;
           border: none;
@@ -185,6 +189,7 @@ header.main-header {
 
         ul {
           padding-left: 0;
+          width: 100% !important;
 
           li {
             font-size: 0.85rem;
@@ -214,15 +219,22 @@ header.main-header {
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 960px) and (min-width: 576px) {
   header.main-header {
     nav {
+      &.app-menu {
+        ul {
+          width: 100% !important;
+        }
+      }
+
       &.app-menu {
         ul {
           li {
             &:first-child {
               display: inline-block !important;
               margin-left: 0;
+
               &:hover {
                 cursor: pointer;
               }
@@ -238,8 +250,83 @@ header.main-header {
 @media screen and (max-width: 768px) and (min-width: 576px) {
   header {
     nav {
+      &.app-menu {
+        ul {
+          width: 100% !important;
+        }
+      }
+
       &.app-navbar {
         width: 90% !important;
+      }
+    }
+  }
+}
+
+// ---- Small mobile phone device
+@media screen and (max-width: 576px) {
+  header {
+    div.logo-zone {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-items: center;
+
+      h1 {
+        margin-bottom: 0;
+      }
+
+      span {
+        margin: 0.6rem;
+
+        svg {
+          color: $textWhite;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    nav {
+      &.app-menu {
+        display: none;
+
+        ul {
+          flex-flow: column !important;
+          margin-top: 0 !important;
+          width: 100%;
+
+          li {
+            font-size: 0.9rem !important;
+            font-weight: 550;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(149, 165, 166, 0.5) !important;
+            width: 100% !important;
+          }
+
+          li:first-child,
+          li:last-child {
+            display: none !important;
+          }
+        }
+      }
+
+      &.app-navbar {
+        width: 100% !important;
+
+        div.search-box {
+          width: 45% !important;
+          margin-right: 0 !important;
+        }
+
+        ul.users-nav {
+          width: 55% !important;
+          margin-left: 0 !important;
+          padding-left: 1.2rem !important;
+        }
       }
     }
   }

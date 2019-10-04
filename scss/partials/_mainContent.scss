@@ -1,8 +1,9 @@
 div.main-content {
   padding: 1rem;
+
   //----- Section 1: Upload zone
   section.upload-zone {
-    width: 50%;
+    width: 55%;
     border: 2px dashed $dashed;
     padding: 0.6rem 2rem;
     margin: 1.5rem auto;
@@ -12,12 +13,12 @@ div.main-content {
     align-items: center;
 
     div.upload-icon {
-      width: 4.5rem;
+      width: 5rem;
       height: 4.5rem;
       background-image: url("../../assets/images/upload-icon.png");
       background-color: $headerBackground;
       background-repeat: no-repeat;
-      // background-size: cover;
+      background-size: 50% 50%;
       background-position: center;
       border-radius: 50%;
     }
@@ -231,8 +232,9 @@ div.main-content {
 @media screen and (max-width: 992px) {
   section.upload-zone {
     padding: 0rem 1.5rem !important;
+
     div.upload-icon {
-      width: 5rem !important;
+      width: 4rem !important;
       height: 4rem !important;
       background-size: 50%, 50%;
       border-radius: 50%;
@@ -249,7 +251,7 @@ div.main-content {
         text-transform: uppercase;
         margin-bottom: 0;
         line-height: 1.3rem;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
     }
   }
@@ -259,6 +261,7 @@ div.main-content {
       width: 70% !important;
       margin-bottom: 0.5rem;
     }
+
     section.table-paginations {
       width: 40% !important;
     }
@@ -268,19 +271,52 @@ div.main-content {
 @media screen and (max-width: 960px) and (min-width: 762px) {
   div.main-content {
     margin: 0 1rem !important;
+
+    section.upload-zone {
+      div.upload-icon {
+        width: 4rem !important;
+        height: 3.5rem !important;
+      }
+    }
   }
 }
 
 // ----- Large mobile phone device
+@media screen and (max-width: 768px) {
+  table {
+    display: block !important;
+  }
+}
+
+@mixin table-change-last-column($width) {
+  thead {
+    th {
+      &:last-child {
+        width: $width !important;
+      }
+    }
+  }
+
+  tbody {
+    td {
+      &:last-child {
+        width: $width !important;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) and (min-width: 576px) {
   div.main-content {
     margin: 0 0.7rem !important;
+
     //--- Section 1.
     section.upload-zone {
       width: 60%;
       padding: 0rem 1.5rem !important;
+
       div.upload-icon {
-        width: 3.5rem !important;
+        width: 3rem !important;
         height: 3rem !important;
         background-size: 50%, 50%;
       }
@@ -288,10 +324,11 @@ div.main-content {
       div.upload-title {
         h2 {
           line-height: 1.2rem;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
         }
+
         p {
-          font-size: 0.9rem;
+          font-size: 0.85rem;
         }
       }
     }
@@ -301,6 +338,7 @@ div.main-content {
       section.filter-properties {
         width: 90% !important;
         margin-top: 0;
+
         p.deleted {
           font-size: 0.85rem;
         }
@@ -310,7 +348,126 @@ div.main-content {
           font-size: 0.7rem;
         }
       }
-      //--[TODO: Table resposive]
+
+      table {
+        @include table-change-last-column(20%);
+
+        thead,
+        tbody {
+          font-size: 0.8rem;
+        }
+      }
+
+      section.table-paginations {
+        width: 50% !important;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 665px) and (min-width: 576px) {
+  div.main-content {
+    section.table-infos {
+      table {
+        @include table-change-last-column(30%);
+      }
+    }
+  }
+}
+
+// ---- Small mobile phone device
+@media screen and (max-width: 576px) {
+  div.main-content {
+    margin: 0 0.5rem;
+
+    section.upload-zone {
+      width: 90%;
+
+      div.upload-icon {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+        background-size: 50%, 50%;
+      }
+
+      div.upload-title {
+        h2 {
+          line-height: 1.0rem;
+          font-size: 1.0rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    section.app-content-breadcrumb {
+      font-size: 0.85rem !important;
+
+      ul {
+        li {
+          &:last-child {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+
+    section.table-infos {
+
+      //--- Table header
+      section.filter-properties {
+        width: 98% !important;
+        margin-top: 0.8rem;
+
+        p.deleted {
+          font-size: 0.7rem;
+        }
+
+        p.download-file {
+          font-size: 0.6rem;
+        }
+
+        div.page-items-number {
+          span {
+            display: none;
+          }
+
+          select {
+            font-size: 0.8rem !important;
+          }
+        }
+
+        div.pagination {
+          font-size: 0.8rem !important;
+        }
+      }
+
+      //--- Table content
+      table {
+
+        thead,
+        tbody {
+          font-size: 0.7rem !important;
+        }
+      }
+
+      //--- Table footer
+      section.table-paginations {
+        width: 60% !important;
+
+        div.page-items-number {
+
+          select {
+            font-size: 0.8rem !important;
+          }
+        }
+
+        div.pagination {
+          font-size: 0.8rem !important;
+        }
+      }
     }
   }
 }
