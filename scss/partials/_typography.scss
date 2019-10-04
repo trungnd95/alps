@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'Avenir';
+  font-family: "Avenir";
   font-style: normal;
   font-weight: normal;
-  src: url('../../assets/fonts/AvenirLTStd-Light.woff') format('woff');
+  src: url("../../assets/fonts/AvenirLTStd-Light.woff") format("woff");
 }
 
 * {
@@ -73,4 +73,12 @@ li {
 
 .visible {
   display: flex !important;
+}
+
+main.app-content-wrapper {
+  position: relative;
+}
+
+.sidebar-visible {
+  left: 0;
 }

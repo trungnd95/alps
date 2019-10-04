@@ -1,6 +1,6 @@
 div.main-content {
   padding: 1rem;
-
+  //----- Section 1: Upload zone
   section.upload-zone {
     width: 50%;
     border: 2px dashed $dashed;
@@ -37,6 +37,7 @@ div.main-content {
     }
   }
 
+  //----- Section 2: Breadcrumb
   section.app-content-breadcrumb {
     ul {
       background: transparent;
@@ -71,6 +72,7 @@ div.main-content {
     }
   }
 
+  ///---- Section 3: Table infos
   section.table-infos {
     width: 100%;
 
@@ -97,12 +99,12 @@ div.main-content {
 
       p.deleted {
         text-decoration: underline;
-        color: #FF5542;
+        color: #ff5542;
         font-weight: 600;
       }
 
       p.download-file {
-        background: #B4B4B4;
+        background: #b4b4b4;
         border: none;
         border-radius: 1rem;
         line-height: 1rem;
@@ -137,6 +139,7 @@ div.main-content {
           border-radius: 5px;
           padding: 2px 4px;
           color: $iconDefault;
+          background: $textWhite;
         }
       }
 
@@ -216,12 +219,22 @@ div.main-content {
   }
 }
 
+// ----- Both tablet and mobile
+@media screen and (max-width: 960px) {
+  div.main-content {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+// ----- Tablet screen
 @media screen and (max-width: 992px) {
   section.upload-zone {
+    padding: 0rem 1.5rem !important;
     div.upload-icon {
       width: 5rem !important;
       height: 4rem !important;
-      background-size: 60%, 60%;
+      background-size: 50%, 50%;
       border-radius: 50%;
     }
 
@@ -238,6 +251,66 @@ div.main-content {
         line-height: 1.3rem;
         font-size: 1.5rem;
       }
+    }
+  }
+
+  section.table-infos {
+    section.filter-properties {
+      width: 70% !important;
+      margin-bottom: 0.5rem;
+    }
+    section.table-paginations {
+      width: 40% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) and (min-width: 762px) {
+  div.main-content {
+    margin: 0 1rem !important;
+  }
+}
+
+// ----- Large mobile phone device
+@media screen and (max-width: 768px) and (min-width: 576px) {
+  div.main-content {
+    margin: 0 0.7rem !important;
+    //--- Section 1.
+    section.upload-zone {
+      width: 60%;
+      padding: 0rem 1.5rem !important;
+      div.upload-icon {
+        width: 3.5rem !important;
+        height: 3rem !important;
+        background-size: 50%, 50%;
+      }
+
+      div.upload-title {
+        h2 {
+          line-height: 1.2rem;
+          font-size: 1.2rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    //--- Section 3
+    section.table-infos {
+      section.filter-properties {
+        width: 90% !important;
+        margin-top: 0;
+        p.deleted {
+          font-size: 0.85rem;
+        }
+
+        p.download-file {
+          padding: 0.2rem 0.6rem;
+          font-size: 0.7rem;
+        }
+      }
+      //--[TODO: Table resposive]
     }
   }
 }
